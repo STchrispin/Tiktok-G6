@@ -3,7 +3,6 @@ import auth from '@react-native-firebase/auth';
 import messaging from '@react-native-firebase/messaging';
 import analytics from '@react-native-firebase/analytics';
 
-// Collections Firestore TikTok
 export const Collections = {
   USERS: 'users',
   VIDEOS: 'videos',
@@ -13,6 +12,7 @@ export const Collections = {
   MESSAGES: 'messages',
   NOTIFICATIONS: 'notifications',
   REPORTS: 'reports',
+  SOUNDS: 'sounds',
 };
 
 export const db = firestore();
