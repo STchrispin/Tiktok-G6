@@ -1,12 +1,21 @@
-import firebase from '@react-native-firebase/app';
+import firestore from '@react-native-firebase/firestore';
+import auth from '@react-native-firebase/auth';
+import messaging from '@react-native-firebase/messaging';
+import analytics from '@react-native-firebase/analytics';
 
-const firebaseConfig = {
-  apiKey: "VOTRE_API_KEY",
-  authDomain: "VOTRE_AUTH_DOMAIN",
-  projectId: "VOTRE_PROJECT_ID",
-  storageBucket: "VOTRE_STORAGE_BUCKET",
-  messagingSenderId: "VOTRE_MESSAGING_SENDER_ID",
-  appId: "VOTRE_APP_ID"
+// Collections Firestore TikTok
+export const Collections = {
+  USERS: 'users',
+  VIDEOS: 'videos',
+  COMMENTS: 'comments',
+  LIKES: 'likes',
+  FOLLOWERS: 'followers',
+  MESSAGES: 'messages',
+  NOTIFICATIONS: 'notifications',
+  REPORTS: 'reports',
 };
 
-export default firebaseConfig;
+export const db = firestore();
+export const firebaseAuth = auth();
+export const firebaseMessaging = messaging();
+export const firebaseAnalytics = analytics();
