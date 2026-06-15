@@ -2,12 +2,14 @@ import { configureStore } from '@reduxjs/toolkit';
 import authReducer from './slices/authSlice';
 import videoReducer from './slices/videoSlice';
 import userReducer from './slices/userSlice';
+import notificationReducer from './slices/notificationSlice';
 
 export const store = configureStore({
   reducer: {
     auth: authReducer,
     video: videoReducer,
     user: userReducer,
+    notification: notificationReducer,
   },
 });
 
