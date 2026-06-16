@@ -9,24 +9,21 @@ import {
 } from 'react-native';
 import { supabase } from '../../services/supabase/config';
 
-const LoginScreen = ({ navigation }: any) => {
+const ForgotPasswordScreen = ({ navigation }: any) => {
   const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
   const [loading, setLoading] = useState(false);
 
-  const handleLogin = async () => {
+  const handleReset = async () => {
     setLoading(true);
-    const { error } = await supabase.auth.signInWithPassword({
-      email,
-      password,
-    });
+    const { error } = await supabase.auth.resetPasswordForEmail(email);
     if (error) Alert.alert('Erreur', error.message);
+    else Alert.alert('Succès', 'Email de réinitialisation envoyé !');
     setLoading(false);
   };
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>TikTok G6</Text>
+      <Text style={styles.title}>Mot de passe oublié</Text>
       <TextInput
         style={styles.input}
         placeholder="Email"
@@ -34,26 +31,14 @@ const LoginScreen = ({ navigation }: any) => {
         value={email}
         onChangeText={setEmail}
         keyboardType="email-address"
-        autoCapitalize="none"
       />
-      <TextInput
-        style={styles.input}
-        placeholder="Mot de passe"
-        placeholderTextColor="#aaa"
-        value={password}
-        onChangeText={setPassword}
-        secureTextEntry
-      />
-      <TouchableOpacity style={styles.button} onPress={handleLogin}>
+      <TouchableOpacity style={styles.button} onPress={handleReset}>
         <Text style={styles.buttonText}>
-          {loading ? 'Connexion...' : 'Se connecter'}
+          {loading ? 'Envoi...' : 'Réinitialiser'}
         </Text>
       </TouchableOpacity>
-      <TouchableOpacity onPress={() => navigation.navigate('Register')}>
-        <Text style={styles.link}>Pas de compte ? S'inscrire</Text>
-      </TouchableOpacity>
-      <TouchableOpacity onPress={() => navigation.navigate('ForgotPassword')}>
-        <Text style={styles.link}>Mot de passe oublié ?</Text>
+      <TouchableOpacity onPress={() => navigation.navigate('Login')}>
+        <Text style={styles.link}>Retour à la connexion</Text>
       </TouchableOpacity>
     </View>
   );
@@ -100,4 +85,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default LoginScreen;
+export default ForgotPasswordScreen;

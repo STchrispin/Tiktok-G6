@@ -5,6 +5,8 @@ import { UploadScreen } from '../components/tiktok/UploadScreen';
 import FriendsScreen from '../screens/FriendsScreen';
 import NotificationScreen from '../screens/NotificationScreen';
 import { View, Text } from 'react-native';
+import SoundListScreen from '../screens/audio/SoundListScreen';
+import AdminDashboard from '../screens/admin/AdminDashboard';
 
 const Tab = createBottomTabNavigator();
 
@@ -23,6 +25,8 @@ const MainNavigator = () => {
       <Tab.Screen name="Upload" component={UploadScreen} />
       <Tab.Screen name="Notifications" component={NotificationScreen} />
       <Tab.Screen name="Profile" component={ProfileScreen} />
+      <Tab.Screen name="Sons" component={SoundListScreen} />
+      <Tab.Screen name="Admin" component={AdminDashboard} />
     </Tab.Navigator>
   );
 };
