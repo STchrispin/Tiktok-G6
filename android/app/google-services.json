@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "413032236852",
+    "project_id": "songoapp-436a4",
+    "storage_bucket": "songoapp-436a4.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:413032236852:android:29ad4f702cda62b20c4761",
+        "android_client_info": {
+          "package_name": "com.songoapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDTEJxgjP8SVhb1sQgP8FwxGwKvNHnBWyY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
